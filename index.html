@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Bharatpur — Beyond the Safari Gate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+</head>
+<body>
+
+<header class="top">
+  <div class="navrow">
+    <div class="brand">
+      <img src="assets/ChatGPT Image Sep 27, 2026, 10_44_52 AM.png" alt="My Bharatpur logo" class="brand-logo">
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#explore">Explore</a>
+      <a href="#map">Map</a>
+      <a href="#guide">Ask a Guide</a>
+      <a href="#plan">Plan a Day</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow-alt">Chitwan Valley, Nepal</p>
+      <h1>Bharatpur is more than the safari gate.</h1>
+      <p class="lede">Chitwan National Park gets the postcard. The wetlands, the river confluences, the hills, and the parks around it get overlooked. This is a way in.</p>
+      <a class="cta cta-primary" href="#explore">Start exploring</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="about" id="about">
+    <h2 class="section-label">About Bharatpur</h2>
+    <p>Bharatpur sits in the Chitwan valley of southern Nepal, where the Rapti and Narayani rivers cut through sal forest and open floodplain on their way down from the hills. It's best known as the gateway to Chitwan National Park, Nepal's first national park and a UNESCO World Heritage Site, home to one-horned rhinos, gharial crocodiles, and the occasional Bengal tiger. But the valley itself is just as much the draw: warm, subtropical, and green almost all year, dotted with villages, river confluences, hills, and parks that have their own slower rhythm. It's a place people pass through on the way to the jungle — worth stopping in for its own sake.</p>
+  </section>
+
+  <section class="explore" id="explore">
+    <h2>Popular Destination</h2>
+    <p class="sub">Bharatpur's major destinations, by the kind of day you're after.</p>
+    <div class="type-grid" id="cards"></div>
+    
+  </section>
+
+  <section class="maparea" id="map">
+    <h2>Find your way</h2>
+    <p class="sub">Destinations, places to stay, and emergency services — all in one map. Tap a pin for details.</p>
+    
+    <div class="map-grid">
+      <div>
+        <div class="map-svg-wrap">
+    <div id="leaflet-map"></div>
+</div>
+        </div>
+      
+      </div>
+      <div class="map-panel" id="map-panel">
+        <h3>Tap a pin to begin</h3>
+        <p>Choose a destination, a place to stay, or an emergency service from the map to see details here.</p>
+      </div>
+    </div>
+    <div class="essentials">
+      <h3>Emergency contacts, wherever you are in Bharatpur</h3>
+      <ul>
+        <li><span>Nepal Police</span><span class="num">100</span></li>
+        <li><span>Tourist Police (toll-free)</span><span class="num">1144</span></li>
+        <li><span>Ambulance</span><span class="num">102</span></li>
+        <li><span>Bharatpur Hospital hotline</span><span class="num">056-597003</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="guide" id="guide">
+    <div class="guide-inner">
+      <div class="icon">🦏</div>
+      <div>
+        <h2>Ask Gaida, your local guide</h2>
+        <p>Gaida (Nepali for rhino) points you somewhere real based on what you're after — no generic top-10 list.</p>
+        <div class="gainda-chat">
+
+  <div class="gainda-input-row">
+    <input
+      type="text"
+      id="gainda-input"
+      placeholder="Ask Gaindā anything about Chitwan..."
+      autocomplete="off"
+    >
+
+    <button id="gainda-ask">
+      Ask
+    </button>
+  </div>
+
+  <div class="gainda-suggestions">
+    <button data-question="I want to visit a place"> Visiting places</button>
+    <button data-question="What places are near the jungle?"> Near jungle</button>
+    <button data-question="How is Sauraha?"> About Sauraha</button>
+    <button data-question="How much does Chitwan cost?"> Cost</button>
+    <button data-question="What can I do in Chitwan?"> Things to do</button>
+  </div>
+
+  <div class="answer" id="answer">
+     Hi! I'm Gaida. Ask me about places, activities, costs, nearby attractions, or trip plans in Chitwan.
+  </div>
+
+</div>
+    </div>
+  </section>
+
+  <section class="planner" id="plan">
+
+  <h2>Build your Chitwan day</h2>
+
+  <p class="planner-subtitle">
+    Choose what you want to experience and Gaida will create a simple day plan for you.
+  </p>
+
+  <div class="interests" id="interests">
+
+    <label>
+      <input type="checkbox" value="wildlife">
+      🦏 Wildlife
+    </label>
+
+    <label>
+      <input type="checkbox" value="religious">
+      🙏 Religious &amp; culture
+    </label>
+
+    <label>
+      <input type="checkbox" value="lake">
+      🌊 Lakes &amp; nature
+    </label>
+
+    <label>
+      <input type="checkbox" value="adventure">
+      🥾 Adventure
+    </label>
+
+    <label>
+      <input type="checkbox" value="family">
+      👨‍👩‍👧 Family
+    </label>
+
+    <label>
+      <input type="checkbox" value="food">
+      🍜 Food &amp; local life
+    </label>
+
+  </div>
+
+  <button class="cta cta-primary" id="build-plan">
+    🗓️ Build my day
+  </button>
+
+  <div id="plan-output"></div>
+
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>My Bharatpur — a concept built around Chitwan's overlooked corners.</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
